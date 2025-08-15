@@ -1,5 +1,5 @@
 # Multi-stage build for SvelteKit application
-FROM node:20.18.1-alpine AS base
+FROM node:20.19-alpine AS base
 
 # Install pnpm
 RUN npm install -g pnpm@10.14.0
@@ -23,7 +23,7 @@ FROM base AS build
 RUN pnpm run build
 
 # Production stage
-FROM node:20.18.1-alpine AS production
+FROM node:20.19-alpine AS production
 
 # Install pnpm
 RUN npm install -g pnpm@10.14.0
