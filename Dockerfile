@@ -19,6 +19,20 @@ COPY . .
 # Build stage
 FROM base AS build
 
+# Set build environment variables for database connection
+ARG DB_HOST
+ARG DB_PORT
+ARG DB_USER
+ARG DB_PASSWORD
+ARG DB_NAME
+
+# Set environment variables for the build process
+ENV DB_HOST=$DB_HOST
+ENV DB_PORT=$DB_PORT
+ENV DB_USER=$DB_USER
+ENV DB_PASSWORD=$DB_PASSWORD
+ENV DB_NAME=$DB_NAME
+
 # Build the application
 RUN pnpm run build
 
