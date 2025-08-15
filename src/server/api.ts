@@ -5,6 +5,8 @@ import { env } from '$env/dynamic/private';
 import { SqlDatabase } from 'remult';
 import { Country } from '../shared/Countries';
 
+console.log({ user: env.DB_USER });
+
 const pg = new Pool({
     host: env.DB_HOST,
     port: parseInt(env.DB_PORT) || 5432,
